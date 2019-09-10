@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TarefaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TB_TAREFA.dbo.TB_TAREFA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TB_TAREFA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="20" />
+    <Property Name="dataAtividade" Type="date" />
+    <Property Name="dataEntrega" Type="date" />
+    <Property Name="dataLimiteEntrega" Type="date" />
+    <Property Name="diagnostico" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityContainer Name="TarefaDBModelStoreContainer">
+    <EntitySet Name="TB_TAREFA" EntityType="Self.TB_TAREFA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TB_TAREFA].[id] AS [id], 
+    [TB_TAREFA].[descricao] AS [descricao], 
+    [TB_TAREFA].[dataAtividade] AS [dataAtividade], 
+    [TB_TAREFA].[dataEntrega] AS [dataEntrega], 
+    [TB_TAREFA].[dataLimiteEntrega] AS [dataLimiteEntrega], 
+    [TB_TAREFA].[diagnostico] AS [diagnostico]
+    FROM [dbo].[TB_TAREFA] AS [TB_TAREFA]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
